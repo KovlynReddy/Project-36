@@ -1,0 +1,75 @@
+﻿@model IEnumerable<JJsAuto.Models.Repair>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Engine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suspension)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transmission)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Battery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brakes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Radiator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Repair_Cost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suspension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transmission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Battery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brakes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Radiator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Repair_Cost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
